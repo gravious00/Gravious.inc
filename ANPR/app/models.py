@@ -16,3 +16,7 @@ class resident(models.Model):
 
 	def __str__(self):
 		return self.veh_id +str("             ")+self.name+str("             ")+self.apartment
+
+
+class federal(models.Model):
+	veh_id = models.CharField(max_length= 20, primary_key=True)
