@@ -1,7 +1,22 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <title>Gravious.inc</title>
+</head>
 <body>
-    <p>Hi there!</p>
-    <p>It works!</p>
-    {{resident.name | safe}}
+    <div class="grid-2">
+        <div class="section-1">
+            <i class="fas fa-code fa-5x white"></i>
+            <h2>Hello There!</h2>
+            <p>You Know It Works</p>
+            <a href="http://127.0.0.1:8000/admin/"><i class="fab fa-login"></i></a>
+        </div>
+    </div>
 </body>
 </html>

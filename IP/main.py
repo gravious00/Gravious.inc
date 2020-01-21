@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 import pytesseract
 
-img = cv2.imread("Car Images/1.png")
+img = cv2.imread("1.png")
 cv2.imshow("img",img)
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 cv2.imshow("gray", gray)
@@ -18,7 +18,7 @@ cv2.imshow("edged", edged)
 
 img1 = img.copy()
 img2 = img.copy()
-im2, contours, heirarchy = cv2.findContours(edged, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+contours, heirarchy = cv2.findContours(edged, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
 cv2.drawContours(img1, contours, -1, (255,0,0), 3)
 cv2.imshow("New",img1)
 
