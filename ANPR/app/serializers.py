@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import resident,federal , visitor
+from .models import resident,federal , visitor ,notifiy
 
 class residentSerializer(serializers.ModelSerializer):
     class Meta:
@@ -14,5 +14,10 @@ class fedralSerializer(serializers.ModelSerializer):
 
 class visitorSerializer(serializers.ModelSerializer):
     class Meta:
-        model = federal
+        model = visitor
         fields = ['veh_id' , 'name' , 'apartment','purpose','veh_type']
+
+
+class notifySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ['notice']

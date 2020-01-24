@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from django.utils import timezone
-from .models import resident , federal, visitor
+from .models import resident , federal, visitor, notifiy
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
-from .serializers import residentSerializer, fedralSerializer , visitorSerializer
+from .serializers import residentSerializer, fedralSerializer , visitorSerializer,notifySerializer
 
 def post_list(request):
 	#resident = resident.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -60,3 +60,13 @@ def visitor_list(request):
 			serializer.save()
 			return Response(serializer.data , status = status.HTTP_201_CREATED)
 		return Response (serializer.errors, status = status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['GET'])
+def notice(request):
+	if request.method == 'GET':
+		obj = notifiy.objects.all()
+		print (obj)
+		serializer = notifySerializer(obj,many=True)
+		print (type(serializer.data))
+		return Response(serializer.data)

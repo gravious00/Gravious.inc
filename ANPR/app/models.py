@@ -34,3 +34,10 @@ class visitor(models.Model):
 
 	def __str__(self):
 		return self.veh_id +str(" ")+self.name+str(" ")+self.apartment
+
+class notifiy(models.Model):
+	notice = models.CharField(max_length=100)
+
+	def __str__(self):
+		return self.notice
+	
